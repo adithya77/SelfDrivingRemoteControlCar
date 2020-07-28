@@ -16,7 +16,6 @@ camera.resolution = (640, 480)
 camera.framerate = 32
 rawCapture = PiRGBArray(camera, size=(640, 480))
 print('hey') 
-# allow the camera to warmup
 time.sleep(0.1)
 
 try :
