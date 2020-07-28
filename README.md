@@ -1,45 +1,52 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+**Selfdriving RC Car**
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+In this project I've used relays to control the car which not a very good idea but it is easy for me to start with as I don't have great understanding of the controller in that RC car.
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
-
+Below is the car I've bought in amazon and broke it and connected it to raspberry pi using relay switch.
+https://www.amazon.in/AJUDIYA-ENTERPRISE-Rechargeable-Crawler-Monster/dp/B081X18S33
 ---
 
-## Edit a file
+## Prerequisites
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
+1. Install python3
+2. Install opencv2 in the raspberrypi
+3. Install tensorflow and keras
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+Below is the GPIO PINS configuration
+1. 'FORWARD':32 
+2. 'BACKWARD':35
+3. 'LEFT':31
+4. 'RIGHT':33}
 
+These pins will be activated when the direction is predicted. So the raspberry pi should be ready to accept the values and move the car in that direction when the respective PIN is activated.
 ---
 
-## Create a file
+## Steps to run
 
-Next, you’ll add a new file to this repository.
+**Step 1** : Capture Data
+	How to generate training data here. We need to control the car manually in the path and parallely record the data.
+	What is the data we record -
+	For every movement of the car we capture an image of the path infornt of the car and record it with Label as the direction the car is moving.
+	
+	Command - python3 raspberrypi/captureData.py
+	
+**Step 2**: Flip Data
+	In this step we are creating more data with the existing data.
+	For example there is an image for left turn. In that case we flip the image and record it as a new train data for right. This way we can generate more traiing data.
+	
+	Command - python3 data_model_train/FlipData.py
 
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
-
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
+**Step 3**:  Generate Train Data
+	This is the crucial step we shoud create training data from the images captured. Here we load all the images and labels into a pickle package which would be easy for training. This step is optional, you can modify the training code to directly use the images, but this is recommended.
+	
+	command - python3 data_model_train/TrainData.py
+	
+**Step 4**: Training the model
+	This step will use the generated pickle data from step 3. It will train using mulitple optimizers and multiple learning rates and generates all the models with accuracy in the name of the file. Based on the highest accuracy we can pick the model and proceed to next step.
+	
+	command - python3 keras_train.py
+	
+**Step 5**: Testing with the RC car
+	command - python3 raspberrypi/SelfDrive.py
 
 ---
-
-## Clone a repository
-
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
-
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
-
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
