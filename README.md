@@ -4,6 +4,7 @@ In this project I've used relays to control the car which not a very good idea b
 
 Below is the car I've bought in amazon and broke it and connected it to raspberry pi using relay switch.
 https://www.amazon.in/AJUDIYA-ENTERPRISE-Rechargeable-Crawler-Monster/dp/B081X18S33
+
 ---
 
 ## Prerequisites
@@ -19,6 +20,7 @@ Below is the GPIO PINS configuration
 4. 'RIGHT':33}
 
 These pins will be activated when the direction is predicted. So the raspberry pi should be ready to accept the values and move the car in that direction when the respective PIN is activated.
+
 ---
 
 ## Steps to run
@@ -47,6 +49,7 @@ These pins will be activated when the direction is predicted. So the raspberry p
 	command - python3 keras_train.py
 	
 **Step 5**: Testing with the RC car
+	
 	command - python3 raspberrypi/SelfDrive.py
 
 ---
