@@ -37,6 +37,3 @@ class Car:
     def destroy(self):
         print('Cleaning up')
         GPIO.cleanup()
-            #return False # remove this if want more keys
-
-    #GPIO.setmode(GPIO.BOARD)
