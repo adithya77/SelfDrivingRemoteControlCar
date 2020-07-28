@@ -1,17 +1,18 @@
 **Selfdriving RC Car**
 
-In this project I've used relays to control the car which not a very good idea but it is easy for me to start with as I don't have great understanding of the controller in that RC car.
+In this project I've used relays to control the car which is not a very good idea but it is easy for me to start with as I don't have great understanding of the controller in that RC car.
 
 Below is the car I've bought in amazon and broke it and connected it to raspberry pi using relay switch.
 https://www.amazon.in/AJUDIYA-ENTERPRISE-Rechargeable-Crawler-Monster/dp/B081X18S33
 
 ---
 
-## Prerequisites
+## Prerequisites in the Raspberry PI
 
-1. Install python3
-2. Install opencv2 in the raspberrypi
-3. Install tensorflow and keras
+1. python3
+2. opencv2
+3. tensorflow
+4. keras
 
 ## GPIO Config
 Below is the GPIO PINS configuration
