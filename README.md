@@ -5,8 +5,6 @@ In this project I've used relays to control the car which is not a very good ide
 Below is the car I've bought in amazon and broke it and connected it to raspberry pi using relay switch.
 https://www.amazon.in/AJUDIYA-ENTERPRISE-Rechargeable-Crawler-Monster/dp/B081X18S33
 
-![Image of Car V1](https://github.com/adithya77/selfDrivingRemoteControlCar/blob/master/car_v1.jpg)
-
 ---
 
 ## Prerequisites in the Raspberry PI
