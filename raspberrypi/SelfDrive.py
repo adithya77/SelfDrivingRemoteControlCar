@@ -5,12 +5,6 @@ from picamera import PiCamera
 import time
 from CarBrain import CarBrain
 from Car import Car
-#from pynput import keyboard
-
-#stream = cv2.VideoCapture('http://192.168.0.101:8080/video')
-
-# Use the next line if your camera has a username and password
-# stream = cv2.VideoCapture('protocol://username:password@IP:port/1')  
 
 lowerBound = np.array([33,80,40])
 upperBound = np.array([102,255,255])
