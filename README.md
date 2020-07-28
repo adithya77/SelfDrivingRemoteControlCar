@@ -13,13 +13,15 @@ https://www.amazon.in/AJUDIYA-ENTERPRISE-Rechargeable-Crawler-Monster/dp/B081X18
 2. Install opencv2 in the raspberrypi
 3. Install tensorflow and keras
 
+## GPIO Config
 Below is the GPIO PINS configuration
+
 1. 'FORWARD':32 
 2. 'BACKWARD':35
 3. 'LEFT':31
 4. 'RIGHT':33}
 
-These pins will be activated when the direction is predicted. So the raspberry pi should be ready to accept the values and move the car in that direction when the respective PIN is activated.
+These pins will be activated when the direction is predicted. So the raspberry pi should be ready to accept the values and move the car in that direction when the respective PIN is activated. This can be changed as required.
 
 ---
 
