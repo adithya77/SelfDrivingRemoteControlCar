@@ -2,7 +2,7 @@
 
 In this project I've used relays to control the car which is not a very good idea but it is easy for me to start with as I don't have great understanding of the controller in that RC car.
 
-Below is the car I've bought in amazon and broke it and connected it to raspberry pi using relay switch.
+Below is the car I've bought in amazon and opened it and connected it to raspberry pi using relay switch.
 https://www.amazon.in/AJUDIYA-ENTERPRISE-Rechargeable-Crawler-Monster/dp/B081X18S33
 
 ---
