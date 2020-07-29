@@ -29,30 +29,30 @@ These pins will be activated when the direction is predicted. So the raspberry p
 
 ## Steps to run
 
-**Step 1** : Capture Data
-	How to generate training data here. We need to control the car manually in the path and parallely record the data.
+**Step 1** : Capture Data - 
+	In this step we generate training data. We control the car manually in the path as shown in the images in repo and parallely record the data.
 	What is the data we record -
-	For every movement of the car we capture an image of the path infornt of the car and record it with Label as the direction the car is moving.
+	For every movement of the car we capture an image of the path infront of the car and record it with Label as the direction the car is moving.
 	
 	Command - python3 raspberrypi/captureData.py
 	
-**Step 2**: Flip Data
+**Step 2**: Flip Data - 
 	In this step we are creating more data with the existing data.
 	For example there is an image for left turn. In that case we flip the image and record it as a new train data for right. This way we can generate more traiing data.
 	
 	Command - python3 data_model_train/FlipData.py
 
-**Step 3**:  Generate Train Data
+**Step 3**:  Generate Train Data - 
 	This is the crucial step we shoud create training data from the images captured. Here we load all the images and labels into a pickle package which would be easy for training. This step is optional, you can modify the training code to directly use the images, but this is recommended.
 	
 	command - python3 data_model_train/TrainData.py
 	
-**Step 4**: Training the model
+**Step 4**: Training the model - 
 	This step will use the generated pickle data from step 3. It will train using mulitple optimizers and multiple learning rates and generates all the models with accuracy in the name of the file. Based on the highest accuracy we can pick the model and proceed to next step.
 	
 	command - python3 keras_train.py
 	
-**Step 5**: Testing with the RC car
+**Step 5**: Testing with the RC car - 
 	
 	command - python3 raspberrypi/SelfDrive.py
 
