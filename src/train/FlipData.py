@@ -3,7 +3,7 @@ import numpy
 import os
 
 
-basePath = "D:/adi/prj/car/data"
+basePath = "data"
 right = basePath+"/RIGHT"
 left = basePath+"/LEFT"
 for (dirpath, dirnames, filenames) in os.walk(right):
