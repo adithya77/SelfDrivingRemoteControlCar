@@ -5,6 +5,9 @@ In this project I've used relays to control the car which is not a very good ide
 Below is the car I've bought in amazon and opened it and connected it to raspberry pi using relay switch.
 https://www.amazon.in/AJUDIYA-ENTERPRISE-Rechargeable-Crawler-Monster/dp/B081X18S33
 
+Later built the complete car from scratch controlled by Raspberry PI on the below chasis module
+https://www.amazon.in/gp/product/B07D5T2DN3
+
 ---
 
 ## Prerequisites in the Raspberry PI
@@ -43,7 +46,7 @@ These pins will be activated when the direction is predicted. So the raspberry p
 	Command - python3 train/FlipData.py
 
 **Step 3**:  Generate Train Data - 
-	This is the crucial step we shoud create training data from the images captured. Here we load all the images and labels into a pickle package which would be easy for training. This step is optional, you can modify the training code to directly use the images, but this is recommended.
+	We shoud create training data from the images captured. Here we load all the images and labels into a pickle package which would be easy for training. This step is optional, you can modify the training code to directly use the images, but this is recommended.
 	
 	command - python3 train/GenerateTrainData.py
 	
